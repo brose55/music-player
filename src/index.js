@@ -1,12 +1,25 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import './style/index.scss';
+import './style/animations.css';
 import App from './App';
+import Landing from './routes/Landing';
+import Album from './routes/Album';
+import Library from './routes/Library';
 import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <BrowserRouter>
+      <Routes>
+        <Route path='/' element={<App />}>
+          <Route path='/' element={<Landing />} />
+          <Route path='library' element={<Library />} />
+          <Route path='album' element={<Album />} />
+        </Route>
+      </Routes>
+    </BrowserRouter>
   </React.StrictMode>,
   document.getElementById('root')
 );

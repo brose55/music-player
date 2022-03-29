@@ -1,25 +1,33 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react';
+// import { Routes, Route } from 'react-router-dom';
+import './style/App.css';
+import Header from './components/Header';
+import { Outlet } from 'react-router-dom'
+// import Landing from './components/Landing';
+// import Library from './components/Library';
+// import Album from './components/Album';
 
-function App() {
+
+const App = () => {
+  const [route, setRoute] = useState('landing');
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Header route={route} setRoute={setRoute} />
+      <main className="centered">
+        <Outlet />
+        {/* <Landing /> */}
+        {/*
+        <Routes>
+          <Route exact path="/" element={<Landing />} />
+          <Route path="/library" element={<Library setRoute={setRoute} {...props} />} />
+          <Route path=":slug" element={<Album />} />
+        </Routes>
+        */}
+      </main>
     </div>
   );
+
 }
 
 export default App;

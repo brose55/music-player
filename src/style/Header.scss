@@ -1,0 +1,46 @@
+@import 'vars';
+
+.app-header {
+  justify-content: space-between;
+  align-items: center;
+  margin: 0.5rem 1rem 0rem 1rem;
+  font-family: 'Shadows Into Light', cursive;
+  color: $light-blue;
+}
+
+.hero-title {
+  margin: 0;
+  color: $pink;
+  text-decoration: none;
+}
+
+.logo-title {
+  align-items: center;
+}
+
+.logo {
+  animation: heart-beat 1s;
+  animation-iteration-count: 3;
+  &:hover {
+    animation: heart-beat infinite .75s;
+  }
+}
+
+.nav-item {
+  margin-left: 1rem;
+  color: $pink;
+  &:hover {
+    color: $light-blue;
+    display: inline-block;
+    transform: scale(1.5);
+  }
+}
+
+.hero-slogan {
+  margin: 0;
+  animation: shake 1.5s;
+  animation-iteration-count: 2;
+  &:hover {
+    animation: shake infinite .5s
+  }
+}

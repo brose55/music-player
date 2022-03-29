@@ -1,0 +1,51 @@
+@import 'vars';
+@import 'mixins';
+@import 'place-holders';
+
+.landing {
+  background: url('/assets/images/mic.jpg') no-repeat center center fixed;
+  @include bg-size(cover);
+}
+
+.selling-points {
+  flex-direction: column;
+  text-align: center;
+}
+
+.point-group {
+  margin: 0 10% 0 15%;
+  grid-template-columns: 1fr 1.5fr;
+}
+
+.first {
+  margin-top: 3%;
+}
+
+.point-icon {
+  justify-self: center;
+  align-self: center;
+  font-size: 10rem;
+  color: $purple;
+}
+
+.point-title {
+  color: $light-blue;
+}
+
+.point-description {
+  color: $pink
+}
+
+.point {
+  justify-self: center;
+  margin-left: 20%;
+  padding-top: 7%;
+}
+
+.selling-points a {
+  animation: heart-beat 1s;
+  animation-iteration-count: 3;
+  &:hover {
+    animation-iteration-count: infinite;
+  }
+}

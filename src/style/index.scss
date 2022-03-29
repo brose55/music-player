@@ -1,0 +1,61 @@
+@import 'vars';
+@import 'mixins';
+@import 'place-holders';
+
+html {
+  background: url('../assets/images/bg.jpg') no-repeat center center fixed;
+  @include bg-size(cover);
+  font-family: 'Lato', sans-serif;
+}
+
+body {
+  display: flex;
+  padding: 0px;
+  margin: 0px;
+}
+
+::-webkit-scrollbar {
+  width: 0px;
+}
+
+#root {
+  min-width: 100vw;
+
+}
+
+.flex {
+  display: flex;
+}
+
+.grid {
+  display: grid;
+}
+
+h1 {
+  font-size: 2.5rem;
+}
+
+h2 {
+  margin: 0;
+  font-size: 1.8rem;
+}
+
+p {
+  font-size: 1.1rem;
+  margin: 0.4rem 0 0.4rem 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+button {
+  background-color: transparent;
+  background-repeat: no-repeat;
+  border: none;
+  cursor: pointer;
+  overflow: hidden;
+  outline: none;
+	font-size: 2vw;
+  color: white;
+}

@@ -1,0 +1,26 @@
+@import 'vars';
+
+.library {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	grid-gap: 2rem;
+}
+
+.album-description {
+	font-size: 1.6rem;
+	text-align: center;
+	padding: 3% 15%;
+	p {
+		color: $light-blue;
+	}
+}
+
+.album-thumbnail {
+  height: auto;
+  width:  100%;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+}
+
+.experimental {
+	box-shadow: 5px 5px 5px black;
+}
