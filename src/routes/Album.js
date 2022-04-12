@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { useParams } from 'react-router-dom';
 import albumData from '../data/albums';
 import PlayerBar from '../components/PlayerBar';
 import '../style/Album.scss';
@@ -6,7 +7,7 @@ import '../style/Album.scss';
 class Album extends Component {
   constructor(props) {
     super(props);
-    const album = albumData.find( album => album.slug === this.props.match.params.slug);
+    const album = albumData.find( album => album.slug === this.props.params.slug);
 
     this.state = {
         album: album,
@@ -24,6 +25,7 @@ class Album extends Component {
   }
 
   componentDidMount() {
+    const { slug } = this.props.params;
     this.eventListeners = {
       timeupdate: e => {
         this.setState({ currentTime: this.audioElement.currentTime });
@@ -140,7 +142,7 @@ class Album extends Component {
 				<div id="album-info">
 					<img id="album-cover-art" src={albumCover} alt='cover art' />
 					<div className="album-details">
-						<h3 className="artist">{artist} <span style={{'padding-left': '1rem'}}>-</span> </h3>
+						<h3 className="artist">{artist} <span style={{'paddingLeft': '1rem'}}>-</span> </h3>
 						<h3 id="album-title"><em>{title}</em></h3>
 						<div id="release-info">{releaseInfo}</div>
 					</div>
@@ -163,4 +165,12 @@ class Album extends Component {
   }
 }
 
-export default Album;
+// how I use the useParams() with a Class based component
+// credit to https://stackoverflow.com/users/2001841/smujmaiku
+// answer found on this question https://stackoverflow.com/questions/58548767/react-router-dom-useparams-inside-class-component
+export default (props) => (
+    <Album
+        {...props}
+        params={useParams()}
+    />
+);
