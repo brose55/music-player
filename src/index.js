@@ -16,7 +16,7 @@ ReactDOM.render(
         <Route path='/' element={<App />}>
           <Route path='/' element={<Landing />} />
           <Route path='library' element={<Library />} />
-          <Route path='album' element={<Album />} />
+          <Route path='album/:slug' element={<Album />} />
         </Route>
       </Routes>
     </BrowserRouter>
