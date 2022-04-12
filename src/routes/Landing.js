@@ -14,7 +14,7 @@ const Landing = () => (
             </div>
           </section>
           <section className='point-group grid'>
-            <Link to="/library" className="point-icon"><ion-icon name="microphone"></ion-icon></Link>
+            <Link to="/library" className="point-icon"><ion-icon name="mic"></ion-icon></Link>
             <div className ="point middle">
               <h2 className="point-title">Unlimitted ad-free</h2>
               <h2 className="point-title large">streaming</h2>
